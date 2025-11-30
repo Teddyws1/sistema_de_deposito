@@ -27,8 +27,26 @@ const produtos = [
         "https://picsum.photos/600/400?3",
         "https://picsum.photos/600/400?4"
     ]
-}
 
+}
+,
+{
+    nome: "Piso Madeira Premium",
+    descricao: "Piso porcelanato com acabamento amadeirado de alta definição. Textura realista, tonalidade natural e excelente durabilidade. Ideal para ambientes internos que buscam conforto visual e elegância.",
+    
+    metragem: "20 x 1920 mm",
+    referencia: "000876",
+    local: "Categoria: Areia",
+    peso: "27 kg",
+    fabricante: "WoodFloor Professional Series",
+    lote: "C32 - Seleção Premium",
+
+    imagens: [
+        "https://picsum.photos/600/400?3",
+        "https://picsum.photos/600/400?4"
+    ]
+
+}
 ];
 
 // ================== GERAR CARDS ==================

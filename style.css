@@ -16,19 +16,48 @@
 
  /* Barra de pesquisa */
  .search-box {
-     width: 100%;
-     max-width: 600px;
-     margin: 0 auto 30px auto;
+     width: 53%;
+     max-width: 420px;
+     height: 42px;
+     margin: 4px 0 21px 61px;
+     background: #fff;
+     border-radius: 30px;
+     padding: 8px 15px;
      display: flex;
-     justify-content: center;
+     align-items: center;
+     gap: 10px;
+
+     border: 1px solid #dcdcdc;
+     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+     transition: all .25s ease;
  }
 
+ /* ÍCONE */
+ .search-box img {
+     width: 22px;
+     height: 22px;
+     opacity: .8;
+     pointer-events: none;
+ }
+
+ /* INPUT */
  .search-box input {
      width: 100%;
-     padding: 12px;
-     border-radius: 10px;
-     border: 1px solid #bbb;
+     border: none;
+     outline: none;
      font-size: 16px;
+     background: transparent;
+ }
+
+ /* HOVER */
+ .search-box:hover {
+     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+ }
+
+ /* FOCUS */
+ .search-box:focus-within {
+     border-color: #4285f4;
+     box-shadow: 0 0 0 3px rgba(66, 133, 244, .25);
  }
 
  /* Cards */
@@ -89,6 +118,7 @@
      display: grid;
      grid-template-columns: 1fr 1fr;
  }
+
 
  /* Galeria */
  .gallery {
@@ -183,10 +213,8 @@
 
  .toggle-btn {
      position: fixed;
-     top: 8px;
-     /* antes era 20px */
-     left: 8px;
-     /* antes era 20px */
+     top: 11px;
+     left: 4px;
      background: var(--cor-primaria);
      color: white;
      padding: 12px 14px;
