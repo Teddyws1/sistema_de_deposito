@@ -90,18 +90,6 @@
      grid-template-columns: 1fr 1fr;
  }
 
- /* FULLSCREEN */
- .fullscreen {
-     position: fixed !important;
-     inset: 0 !important;
-     width: 100% !important;
-     height: 100% !important;
-     max-width: none !important;
-     max-height: none !important;
-     border-radius: 0 !important;
-     grid-template-columns: 1fr !important;
- }
-
  /* Galeria */
  .gallery {
      position: relative;
@@ -117,19 +105,6 @@
      width: 100%;
      -webkit-user-select: none;
      user-select: none;
- }
-
- /* Setas */
- .arrow {
-     position: absolute;
-     top: 50%;
-     transform: translateY(-50%);
-     background: rgba(0, 0, 0, 0.5);
-     color: white;
-     padding: 12px;
-     border-radius: 50%;
-     cursor: pointer;
-     font-size: 20px;
  }
 
  .arrow.left {

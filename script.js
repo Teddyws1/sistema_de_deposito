@@ -12,17 +12,23 @@ const produtos = [
         lote: "A45",
         imagens: ["https://picsum.photos/600/400?1", "https://picsum.photos/600/400?2"]
     },
-    {
-        nome: "Piso Madeira",
-        descricao: "Acabamento amadeirado premium.",
-        metragem: "20x120",
-        referencia: "000876",
-        local: "Areia",
-        peso: "27kg",
-        fabricante: "WoodFloor",
-        lote: "C32",
-        imagens: ["https://picsum.photos/600/400?3", "https://picsum.photos/600/400?4"]
-    }
+   {
+    nome: "Piso Madeira Premium",
+    descricao: "Piso porcelanato com acabamento amadeirado de alta definição. Textura realista, tonalidade natural e excelente durabilidade. Ideal para ambientes internos que buscam conforto visual e elegância.",
+    
+    metragem: "20 x 1920 mm",
+    referencia: "000876",
+    local: "Categoria: Areia",
+    peso: "27 kg",
+    fabricante: "WoodFloor Professional Series",
+    lote: "C32 - Seleção Premium",
+
+    imagens: [
+        "https://picsum.photos/600/400?3",
+        "https://picsum.photos/600/400?4"
+    ]
+}
+
 ];
 
 // ================== GERAR CARDS ==================
@@ -122,11 +128,6 @@ document.getElementById("arrowRight").onclick = () => {
 function updateGallery() {
     galleryTrack.style.transform = `translateX(${-imgIndex * 100}%)`;
 }
-
-// ================== FULLSCREEN ==================
-document.getElementById("btnFullscreen").onclick = () => {
-    document.getElementById("modalContent").classList.toggle("fullscreen");
-};
 
 // ================== GESTOS (PINCH E SWIPE) ==================
 let startX = 0;
