@@ -16,21 +16,71 @@
 
  /* Barra de pesquisa */
  .search-box {
-     width: 53%;
-     max-width: 420px;
-     height: 42px;
-     margin: 4px 0 21px 61px;
-     background: #fff;
-     border-radius: 30px;
-     padding: 8px 15px;
-     display: flex;
-     align-items: center;
-     gap: 10px;
+    width: 53%;
+    max-width: 420px;
+    height: 42px;
+    background: #fff;
+    border-radius: 30px;
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: fixed;
+    top: 15px;        
+    left: 70px;     
+    z-index: 9999;
+    border: 1px solid #dcdcdc;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+    transition: all .25s ease;
+}
 
-     border: 1px solid #dcdcdc;
-     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
-     transition: all .25s ease;
- }
+/* Ícone dentro da barra */
+.search-box img {
+    width: 20px;
+    height: 20px;
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+/* Input */
+.search-box input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+}
+
+/* sistema de adptação */
+
+/* 📱 MOBILE */
+@media (max-width: 600px) {
+    .search-box {
+        width: 70%;
+        left: 80px;     /* ajustado para mobile */
+        top: 15px;
+        height: 45px;
+    }
+}
+
+/* 📱📱 TABLET */
+@media (min-width: 600px) and (max-width: 1024px) {
+    .search-box {
+        width: 60%;
+        left: 80px;
+        top: 15px;
+    }
+}
+
+/* 🖥️🖥️ DESKTOP (PC) */
+@media (min-width: 1025px) {
+    .search-box {
+        width: 53%;     
+        left: 80px;     
+        top: 15px;      
+        position: relative; 
+    }
+}
 
  /* ÍCONE */
  .search-box img {
