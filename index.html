@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catálogo de Produtos</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="overlaySidebar"></div>
+
+    <!-- SIDEBAR LATERAL -->
+    <div id="sidebar" class="sidebar">
+      <h3>Categorias</h3>
+      <ul>
+        <li onclick="filtrarCategoria('areia')">Areia</li>
+        <li onclick="filtrarCategoria('louca')">Louça</li>
+        <li onclick="filtrarCategoria('patio')">Pátio</li>
+        <li onclick="filtrarCategoria('todas')">Todas</li>
+      </ul>
+    </div>
+
+    <button id="toggleSidebar" class="toggle-btn">☰</button>
+
+    <div class="search-box">
+      <input id="search" placeholder="Pesquisar produto..." />
+    </div>
+
+    <div id="grid" class="grid"></div>
+
+    <!-- MODAL -->
+    <div id="modal" class="modal">
+      <div id="modalContent" class="modal-content">
+        <!-- Galeria -->
+        <div class="gallery">
+          <div class="fullscreen-btn" id="btnFullscreen">Tela cheia</div>
+          <div class="gallery-track" id="galleryTrack"></div>
+          <div class="arrow left" id="arrowLeft">❮</div>
+          <div class="arrow right" id="arrowRight">❯</div>
+        </div>
+
+        <!-- Detalhes -->
+        <div class="details" id="modalDetails"></div>
+      </div>
+    </div>
+    <!--sistema novo-->
+  </body>
+</html>
