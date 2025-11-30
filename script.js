@@ -94,6 +94,11 @@ overlaySidebar.onclick = () => {
     sidebar.classList.remove('active');
     overlaySidebar.classList.remove('active');
 }; () => sidebar.classList.toggle('active');
+// ================== button de fecha aba lateral ==================
+document.querySelector('.close-sidebar').addEventListener('click', () => {
+    document.getElementById('sidebar').classList.remove('active');
+});
+
 
 // ================== PESQUISA ==================
 document.getElementById("search").addEventListener("input", e => {

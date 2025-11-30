@@ -8,11 +8,13 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="overlaySidebar"></div>
 
+    <div id="overlaySidebar"></div>
     <!-- SIDEBAR LATERAL -->
     <div id="sidebar" class="sidebar">
+      <button class="close-sidebar" aria-label="Fechar menu">✕</button>
       <h3>Categorias</h3>
+      <br />
       <ul>
         <li onclick="filtrarCategoria('areia')">Areia</li>
         <li onclick="filtrarCategoria('louca')">Louça</li>
@@ -23,12 +25,14 @@
 
     <button id="toggleSidebar" class="toggle-btn">☰</button>
     <!---barra de pesquisa--->
-<div class="search-box">
-  <img src="https://icons.iconarchive.com/icons/icons8/windows-8/24/Very-Basic-Search-icon.png" 
-       alt="Buscar" class="search-icon">
-  <input id="search" placeholder="Pesquisar produto..." />
-</div>
-
+    <div class="search-box">
+      <img
+        src="https://icons.iconarchive.com/icons/icons8/windows-8/24/Very-Basic-Search-icon.png"
+        alt="Buscar"
+        class="search-icon"
+      />
+      <input id="search" placeholder="Pesquisar produto..." />
+    </div>
 
     <div id="grid" class="grid"></div>
 
