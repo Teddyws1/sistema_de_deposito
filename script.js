@@ -201,3 +201,4 @@ gallery.addEventListener("touchmove", e => {
 }, { passive: false });
 
 //novo sistema
+
