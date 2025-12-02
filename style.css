@@ -49,7 +49,7 @@
      outline: none;
      background: transparent;
      font-size: 16px;
-
+     z-index: -10000;
  }
 
  /* 📱 MOBILE */
@@ -58,6 +58,7 @@
          width: 70%;
          margin-left: 80px;
          height: 45px;
+         z-index: -10000;
      }
  }
 
@@ -66,6 +67,7 @@
      .search-box {
          width: 40%;
          margin-left: 80px;
+         z-index: -10000;
      }
  }
 
@@ -74,6 +76,7 @@
      .search-box {
          width: 53%;
          margin-left: 80px;
+         z-index: -10000;
      }
  }
 
@@ -135,7 +138,9 @@
      line-height: 1.4;
  }
 
- /* MODAL */
+
+
+ /* --- MODAL --- */
  .modal {
      position: fixed;
      inset: 0;
@@ -156,30 +161,236 @@
      background: white;
      width: 100%;
      max-width: 950px;
+     height: 550px;
+     /* Mantém fixo */
      border-radius: 15px;
      overflow: hidden;
-     position: relative;
      display: grid;
      grid-template-columns: 1fr 1fr;
  }
 
 
- /* Galeria */
- .gallery {
-     position: relative;
-     overflow: hidden;
- }
 
  .gallery-track {
      display: flex;
-     transition: 0.4s;
+     height: 100%;
+     /* <= CORRIGE O BUG */
+     width: 100%;
+     transition: transform .3s ease;
  }
 
- .gallery img {
+ .gallery-track img {
      width: 100%;
-     -webkit-user-select: none;
-     user-select: none;
+     height: 100%;
+     object-fit: cover;
+     /* Mantém proporção e preenche */
+     cursor: pointer;
  }
+
+ /* Setas */
+ .arrow {
+     position: absolute;
+     top: 50%;
+     transform: translateY(-50%);
+     width: 40px;
+     height: 40px;
+     cursor: pointer;
+ }
+
+ .arrow.left {
+     left: 10px;
+ }
+
+ .arrow.right {
+     right: 10px;
+ }
+
+ /* --- MODAL DE IMAGEM CHEIA --- */
+ .full-image-modal {
+     position: fixed;
+     inset: 0;
+     background: rgba(0, 0, 0, 0.85);
+     display: none;
+     justify-content: center;
+     align-items: center;
+     z-index: 10000;
+ }
+
+ .full-image-modal.active {
+     display: flex;
+ }
+
+ .full-image-modal img {
+     max-width: 100%;
+     max-height: 100%;
+     object-fit: contain;
+ }
+
+ .close-full {
+     position: absolute;
+     top: 20px;
+     right: 30px;
+     font-size: 40px;
+     color: white;
+     cursor: pointer;
+ }
+
+
+ /* Galeria */
+ .gallery {
+
+     position: relative;
+     width: 100%;
+     height: 350px;
+     overflow: hidden;
+     perspective: 12600px;
+
+ }
+
+ #galleryTrack {
+     display: flex;
+     width: 100%;
+     height: 100%;
+     transition: transform 0.65s cubic-bezier(.22, 1.28, .22, 1.0);
+     /* bounce suave */
+     position: relative;
+ }
+
+ /* ===== Imagens ===== */
+ #galleryTrack img {
+     width: 100%;
+     height: 100%;
+     object-fit: contain;
+     padding: 10px;
+     /* animação default */
+     transition:
+         transform 0.65s cubic-bezier(.22, 1.28, .22, 1.0),
+         /* elastic bounce */
+         filter 0.6s ease,
+         opacity 0.6s ease;
+ }
+
+ /* ===== EFEITO 3D COVERFLOW ===== */
+ #galleryTrack img {
+     transform-origin: center;
+ }
+
+ #galleryTrack.moving-right img {
+     transform: rotateY(-30deg) scale(0.85);
+     filter: blur(3px) brightness(0.8);
+ }
+
+ #galleryTrack.moving-left img {
+     transform: rotateY(30deg) scale(0.85);
+     filter: blur(3px) brightness(0.8);
+ }
+
+ /* ===== EFEITO DE “ENTRA POR CIMA / DESCE POR BAIXO” ===== */
+ #galleryTrack img.next-enter {
+     animation: slideFromTop 0.7s ease forwards;
+ }
+
+ @keyframes slideFromTop {
+     0% {
+         transform: translateY(-60%) scale(0.7) rotateX(25deg);
+         opacity: 0;
+         filter: blur(6px);
+     }
+
+     100% {
+         transform: translateY(0) scale(1) rotateX(0);
+         opacity: 1;
+         filter: blur(0);
+     }
+ }
+
+ #galleryTrack img.prev-leave {
+     animation: slideToBottom 0.7s ease forwards;
+ }
+
+ @keyframes slideToBottom {
+     0% {
+         transform: translateY(0);
+         opacity: 1;
+         filter: blur(0);
+     }
+
+     100% {
+         transform: translateY(60%) scale(0.7) rotateX(-20deg);
+         opacity: 0;
+         filter: blur(8px);
+     }
+ }
+
+ /* === ZOOM SUAVE NA IMAGEM ATUAL ===== */
+ #galleryTrack img.active {
+     transform: scale(1.08) rotateY(0deg) !important;
+     filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.25));
+ }
+
+ /* ===== REFLEXO ===== */
+
+ .reflection-box {
+     display: inline-block;
+     position: relative;
+ }
+
+
+ .reflection-box::after {
+     content: '';
+     position: absolute;
+     top: 100%;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-image: url('your-image.jpg');
+     background-size: cover;
+     background-position: center;
+     transform: scaleY(-1);
+     transform-origin: top;
+     -webkit-mask-image: linear-gradient(transparent 60%,
+             rgba(0, 0, 0, 0.15));
+     mask-image: linear-gradient(transparent 60%,
+             rgba(0, 0, 0, 0.15));
+     margin-top: 8px;
+ }
+
+ /* ===== SOMBRA DINÂMICA ===== */
+ #galleryTrack img {
+     box-shadow:
+         0 18px 30px rgba(0, 0, 0, 0.25),
+         0 8px 15px rgba(0, 0, 0, 0.15);
+ }
+
+ /* ===== PARTÍCULAS FLUTUANDO ===== */
+ .gallery::before,
+ .gallery::after {
+     content: "";
+     position: absolute;
+     width: 120%;
+     height: 120%;
+     background: radial-gradient(circle, rgba(255, 255, 255, 0.25) 0%, transparent 70%);
+     top: -20%;
+     left: -20%;
+     pointer-events: none;
+     animation: particles 12s infinite linear alternate;
+ }
+
+ .gallery::after {
+     animation-duration: 18s;
+     opacity: 0.4;
+ }
+
+ @keyframes particles {
+     0% {
+         transform: translateX(-30px) translateY(10px) scale(1);
+     }
+
+     100% {
+         transform: translateX(30px) translateY(-10px) scale(1.2);
+     }
+ }
+
 
  .arrow.left {
      left: 10px;
@@ -192,6 +403,7 @@
  /* Descrição do produto */
  .details {
      padding: 20px;
+     
  }
 
  .details h3 {
@@ -255,29 +467,30 @@
 
  /* Linha separadora aba ateral divider*/
  .aba-lateral-divider {
-  border: none;
-  height: 2px;
-  background: linear-gradient(270deg, #ffffff, #6d2020, #ffffff);
-  background-size: 600% 100%;
-  margin: 30px 0;
-  border-radius: 2px; /* deixa as pontas levemente arredondadas */
-  animation: moveGradient 3s linear infinite, pulseGlow 2s ease-in-out infinite;
-}
+     border: none;
+     height: 2px;
+     background: linear-gradient(270deg, #ffffff, #000000, #ffffff);
+     background-size: 600% 100%;
+     margin: 30px 0;
+     border-radius: 2px;
+     /* deixa as pontas levemente arredondadas */
+     animation: moveGradient 3s linear infinite, pulseGlow 2s ease-in-out infinite;
+ }
 
-/* Animação do degradê se movendo */
-@keyframes moveGradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
+ /* Animação do degradê se movendo */
+ @keyframes moveGradient {
+     0% {
+         background-position: 0% 50%;
+     }
 
-/* Pulsação de brilho neon */
-@keyframes pulseGlow {
-  0%, 100% { box-shadow: 0 0 8px rgba(255,255,255,0.5); }
-  50% { box-shadow: 0 0 15px rgba(255,255,255,0.8); }
-}
+     50% {
+         background-position: 100% 50%;
+     }
 
-
+     100% {
+         background-position: 0% 50%;
+     }
+ }
 
  /* Lista */
  #sidebar ul {
@@ -457,13 +670,12 @@
  /* Linha separadora estilizada */
  .divider {
      border: none;
-     /* remove borda padrão */
      height: 1px;
-     /* altura da linha */
      background: linear-gradient(to right, #ffffff, #000000, #ffffff);
-     /* degradê moderno */
      margin: 30px 0;
-     /* espaçamento acima e abaixo */
  }
+
+ /* ======== mini card ======== */
+
 
  /* rodape */
