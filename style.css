@@ -17,80 +17,37 @@
 
  /* Barra de pesquisa */
  .search-box {
-     width: 53%;
-     max-width: 420px;
-     height: 42px;
-     background: #fff;
-     border-radius: 30px;
-     padding: 8px 15px;
-     display: flex;
-     align-items: center;
-     gap: 10px;
-     position: relative;
-     margin: 15px 0 20px 70px;
-     z-index: 10;
-     border: 1px solid #dcdcdc;
-     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
-     transition: all .25s ease;
- }
+    width: 53%;
+    max-width: 420px;
+    height: 42px;
+    background: #fff;
+    border-radius: 30px;
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    margin: 15px 0 20px 70px;
+    z-index: 10;
+    border: 1px solid #dcdcdc;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    transition: .25s ease;
+}
 
- /* Ícone dentro da barra */
- .search-box img {
-     width: 20px;
-     height: 20px;
-     opacity: 0.8;
-     pointer-events: none;
- }
+.search-box img {
+    width: 22px;
+    height: 22px;
+    opacity: .8;
+}
 
- /* Input */
- .search-box input {
-     width: 100%;
-     border: none;
-     outline: none;
-     background: transparent;
-     font-size: 16px;
-     z-index: -10000;
- }
-
- /* 📱 MOBILE */
- @media (max-width: 600px) {
-     .search-box {
-         width: 70%;
-         margin-left: 80px;
-         height: 45px;
-         z-index: -10000;
-     }
- }
-
- /* 📱📱 TABLET */
- @media (min-width: 600px) and (max-width: 1024px) {
-     .search-box {
-         width: 40%;
-         margin-left: 80px;
-         z-index: -10000;
-     }
- }
-
- /* 🖥️ DESKTOP */
- @media (min-width: 1025px) {
-     .search-box {
-         width: 53%;
-         margin-left: 80px;
-         z-index: -10000;
-     }
- }
-
- /* Ícone */
- .search-box img {
-     width: 22px;
-     height: 22px;
-     opacity: .8;
- }
-
- /* Input */
- .search-box input {
-     font-size: 16px;
- }
+.search-box input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+    z-index: -10000;
+}
 
  /*fim de  */
 
@@ -141,270 +98,137 @@
 
 
  /* --- MODAL --- */
- .modal {
-     position: fixed;
-     inset: 0;
-     background: rgba(0, 0, 0, 0.7);
-     display: none;
-     justify-content: center;
-     align-items: center;
-     padding: 20px;
-     -webkit-backdrop-filter: blur(2px);
-     backdrop-filter: blur(2px);
- }
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    z-index: 9999;
+}
 
- .modal.active {
-     display: flex;
- }
+.modal.active {
+    display: flex;
+}
 
- .modal-content {
-     background: white;
-     width: 100%;
-     max-width: 950px;
-     height: 550px;
-     /* Mantém fixo */
-     border-radius: 15px;
-     overflow: hidden;
-     display: grid;
-     grid-template-columns: 1fr 1fr;
- }
-
-
-
- .gallery-track {
-     display: flex;
-     height: 100%;
-     /* <= CORRIGE O BUG */
-     width: 100%;
-     transition: transform .3s ease;
- }
-
- .gallery-track img {
-     width: 100%;
-     height: 100%;
-     object-fit: cover;
-     /* Mantém proporção e preenche */
-     cursor: pointer;
- }
-
- /* Setas */
- .arrow {
-     position: absolute;
-     top: 50%;
-     transform: translateY(-50%);
-     width: 40px;
-     height: 40px;
-     cursor: pointer;
- }
-
- .arrow.left {
-     left: 10px;
- }
-
- .arrow.right {
-     right: 10px;
- }
-
- /* --- MODAL DE IMAGEM CHEIA --- */
- .full-image-modal {
-     position: fixed;
-     inset: 0;
-     background: rgba(0, 0, 0, 0.85);
-     display: none;
-     justify-content: center;
-     align-items: center;
-     z-index: 10000;
- }
-
- .full-image-modal.active {
-     display: flex;
- }
-
- .full-image-modal img {
-     max-width: 100%;
-     max-height: 100%;
-     object-fit: contain;
- }
-
- .close-full {
-     position: absolute;
-     top: 20px;
-     right: 30px;
-     font-size: 40px;
-     color: white;
-     cursor: pointer;
- }
+.modal-content {
+    background: white;
+    width: 100%;
+    max-width: 950px;
+    height: 550px;
+    border-radius: 15px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
 
 
- /* Galeria */
- .gallery {
+/* ================= GALERIA ================ */
 
-     position: relative;
-     width: 100%;
-     height: 350px;
-     overflow: hidden;
-     perspective: 12600px;
+.gallery {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+}
 
- }
+/* faixa das imagens */
+.gallery-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform .3s ease-in-out;
+}
 
- #galleryTrack {
-     display: flex;
-     width: 100%;
-     height: 100%;
-     transition: transform 0.65s cubic-bezier(.22, 1.28, .22, 1.0);
-     /* bounce suave */
-     position: relative;
- }
-
- /* ===== Imagens ===== */
- #galleryTrack img {
-     width: 100%;
-     height: 100%;
-     object-fit: contain;
-     padding: 10px;
-     /* animação default */
-     transition:
-         transform 0.65s cubic-bezier(.22, 1.28, .22, 1.0),
-         /* elastic bounce */
-         filter 0.6s ease,
-         opacity 0.6s ease;
- }
-
- /* ===== EFEITO 3D COVERFLOW ===== */
- #galleryTrack img {
-     transform-origin: center;
- }
-
- #galleryTrack.moving-right img {
-     transform: rotateY(-30deg) scale(0.85);
-     filter: blur(3px) brightness(0.8);
- }
-
- #galleryTrack.moving-left img {
-     transform: rotateY(30deg) scale(0.85);
-     filter: blur(3px) brightness(0.8);
- }
-
- /* ===== EFEITO DE “ENTRA POR CIMA / DESCE POR BAIXO” ===== */
- #galleryTrack img.next-enter {
-     animation: slideFromTop 0.7s ease forwards;
- }
-
- @keyframes slideFromTop {
-     0% {
-         transform: translateY(-60%) scale(0.7) rotateX(25deg);
-         opacity: 0;
-         filter: blur(6px);
-     }
-
-     100% {
-         transform: translateY(0) scale(1) rotateX(0);
-         opacity: 1;
-         filter: blur(0);
-     }
- }
-
- #galleryTrack img.prev-leave {
-     animation: slideToBottom 0.7s ease forwards;
- }
-
- @keyframes slideToBottom {
-     0% {
-         transform: translateY(0);
-         opacity: 1;
-         filter: blur(0);
-     }
-
-     100% {
-         transform: translateY(60%) scale(0.7) rotateX(-20deg);
-         opacity: 0;
-         filter: blur(8px);
-     }
- }
-
- /* === ZOOM SUAVE NA IMAGEM ATUAL ===== */
- #galleryTrack img.active {
-     transform: scale(1.08) rotateY(0deg) !important;
-     filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.25));
- }
-
- /* ===== REFLEXO ===== */
-
- .reflection-box {
-     display: inline-block;
-     position: relative;
- }
+/* imagem */
+.gallery-track img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    flex-shrink: 0; /* impede imagem extra aparecer */
+}
 
 
- .reflection-box::after {
-     content: '';
-     position: absolute;
-     top: 100%;
-     left: 0;
-     width: 100%;
-     height: 100%;
-     background-image: url('your-image.jpg');
-     background-size: cover;
-     background-position: center;
-     transform: scaleY(-1);
-     transform-origin: top;
-     -webkit-mask-image: linear-gradient(transparent 60%,
-             rgba(0, 0, 0, 0.15));
-     mask-image: linear-gradient(transparent 60%,
-             rgba(0, 0, 0, 0.15));
-     margin-top: 8px;
- }
 
- /* ===== SOMBRA DINÂMICA ===== */
- #galleryTrack img {
-     box-shadow:
-         0 18px 30px rgba(0, 0, 0, 0.25),
-         0 8px 15px rgba(0, 0, 0, 0.15);
- }
+/* =================== SETAS =================== */
 
- /* ===== PARTÍCULAS FLUTUANDO ===== */
- .gallery::before,
- .gallery::after {
-     content: "";
-     position: absolute;
-     width: 120%;
-     height: 120%;
-     background: radial-gradient(circle, rgba(255, 255, 255, 0.25) 0%, transparent 70%);
-     top: -20%;
-     left: -20%;
-     pointer-events: none;
-     animation: particles 12s infinite linear alternate;
- }
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 20;
+}
 
- .gallery::after {
-     animation-duration: 18s;
-     opacity: 0.4;
- }
-
- @keyframes particles {
-     0% {
-         transform: translateX(-30px) translateY(10px) scale(1);
-     }
-
-     100% {
-         transform: translateX(30px) translateY(-10px) scale(1.2);
-     }
- }
+.arrow.left { left: 10px; }
+.arrow.right { right: 10px; }
 
 
- .arrow.left {
-     left: 10px;
- }
 
- .arrow.right {
-     right: 10px;
- }
+/* ============= DETALHES ============== */
+.details {
+    padding: 20px;
+    overflow-y: auto;        
+    max-height: 100%;    
 
- /* Descrição do produto */
- .details {
-     padding: 20px;
-     
- }
+}
+
+/* Estilo opcional da barra de rolagem no Chrome */
+.details::-webkit-scrollbar {
+    width: 6px;
+}
+
+.details::-webkit-scrollbar-thumb {
+    background: #b3b3b3;
+    border-radius: 10px;
+}
+
+.details::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+
+/* =============== FULL IMAGE MODAL ================ */
+
+.full-image-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.full-image-modal.active {
+    display: flex;
+}
+
+.full-image-modal img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.close-full {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+
 
  .details h3 {
      margin-bottom: 10px;

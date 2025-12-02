@@ -21,8 +21,8 @@ const produtos = [
         fabricante: "WoodFloor Professional Series",
         lote: "C32 - Seleção Premium",
         imagens: [
-            "https://picsum.photos/600/400?3",
-            "https://picsum.photos/600/400?4"
+            "https://i.postimg.cc/5y4fdpk4/Captura-de-Tela-(36).png",
+            "https://i.postimg.cc/5y4fdpk4/Captura-de-Tela-(36).png"
         ]
     },
     {
@@ -114,6 +114,9 @@ function renderCards(lista) {
 }
 
 renderCards(produtos);
+
+///barra de pesquisa
+
 
 
 // ================== FILTRAR ==================
@@ -336,13 +339,7 @@ gallery.addEventListener("touchmove", e => {
         }
     }
 
-    // pinch zoom
-    if (e.touches.length === 2) {
-        const newDist = dist(e);
-        currentScale = Math.min(Math.max(newDist / initialDistance, 1), 3);
-        galleryTrack.style.transform =
-            `scale(${currentScale}) translateX(${-imgIndex * 100 / currentScale}%)`;
-    }
+
 }, { passive: false });
 
 //sistema de anti-bug de blue
@@ -439,7 +436,75 @@ document.addEventListener('touchend', function (e) {
 })();
 
 
-///////////////////////ddd
+/////scrol do details
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const details = document.querySelector(".details");       // área azul
+    const gallery = document.querySelector(".gallery-track"); // área de cima
+
+    let inDetails = false;
+    let inGallery = false;
+
+    /* -------------------------
+       DETECTAR ENTRADA / SAÍDA
+    ------------------------- */
+
+    // Desktop
+    details.addEventListener("mouseenter", () => {
+        inDetails = true;
+        inGallery = false;
+    });
+
+    details.addEventListener("mouseleave", () => {
+        inDetails = false;
+    });
+
+    gallery.addEventListener("mouseenter", () => {
+        inGallery = true;
+        inDetails = false;
+    });
+
+    gallery.addEventListener("mouseleave", () => {
+        inGallery = false;
+    });
+
+    /* -------------------------
+       BLOQUEAR SCROLL ENTRE ÁREAS
+    ------------------------- */
+
+    // SCROLL na área azul → só rola o texto
+    details.addEventListener("wheel", e => {
+        e.stopPropagation();  // impede passar pra galeria
+    }, { passive: false });
+
+    // SCROLL na área de cima → só mexe galeria
+    gallery.addEventListener("wheel", e => {
+        if (inDetails) {
+            e.preventDefault();
+            e.stopPropagation();
+            return;
+        }
+    }, { passive: false });
+
+    /* -------------------------
+       SUPORTE MOBILE (TOUCH)
+    ------------------------- */
+
+    details.addEventListener("touchmove", e => {
+        e.stopPropagation();
+    }, { passive: false });
+
+    gallery.addEventListener("touchmove", e => {
+        if (inDetails) {
+            e.preventDefault();
+            e.stopPropagation();
+            return;
+        }
+    }, { passive: false });
+
+});
+
 
 
 //sistema novo 

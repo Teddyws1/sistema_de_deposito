@@ -4,4 +4,4 @@ fase de testes
 versão do sistema: 0.0.1v
 
 
-controle de código: 0.1.1.5v
+controle de código: 0.1.1.6v
