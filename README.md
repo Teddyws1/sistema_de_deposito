@@ -1,10 +1,11 @@
 # sisteam de depósito
 fase de testes 
 
-versão do sistema: 0.1.0v
+versão do sistema: 0.2.0v
 
 
-Versão 0.1.0v – Modal responsivo, animação de abertura, navegação por scroll/swipe, 1 clique/1 toque, scroll não infinito, CSS corrigido e novo HTML.
+Versão 0.2.0v – Modal responsivo, animação de abertura, navegação por scroll/swipe com limites, 1 clique/1 toque, CSS corrigido, HTML atualizado com <hr class="dividerh4" /> e links de redes sociais abrindo em nova aba, suporte PWA com instalação e splash screen.
+
 
 
 

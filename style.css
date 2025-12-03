@@ -493,7 +493,7 @@
      text-align: center;
  }
 
-.dividerh4 {
+ .dividerh4 {
      border: none;
      height: 1px;
      background: linear-gradient(to right, #ffffff, #000000, #ffffff);
@@ -607,4 +607,29 @@
      #img-original-overlay img {
          border-radius: 8px;
      }
+ }
+
+ /* Remove highlight azul no Android e iOS */
+ * {
+     -webkit-tap-highlight-color: transparent;
+ }
+
+ /* Remove contorno de foco em todos os navegadores */
+ *:focus {
+     outline: none !important;
+     box-shadow: none !important;
+ }
+
+ /* Remove contorno de botões, links, inputs, etc. */
+ a, button, img, svg, input, textarea, select {
+     outline: none !important;
+     box-shadow: none !important;
+     -webkit-tap-highlight-color: transparent;
+ }
+
+ /* Remove comportamento especial no Safari iOS */
+ a, button {
+     -webkit-touch-callout: none;
+     -webkit-user-select: none;
+     user-select: none;
  }
