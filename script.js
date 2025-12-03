@@ -115,7 +115,7 @@ function renderCards(lista) {
 
 renderCards(produtos);
 
-///barra de pesquisa
+///barra de 
 
 
 
@@ -406,13 +406,6 @@ document.addEventListener('keydown', function (e) {
         e.preventDefault();
     }
 });
-
-// --- BLOQUEAR PINCH ZOOM (mobile)
-document.addEventListener('touchmove', function (e) {
-    if (e.scale !== 1) {
-        e.preventDefault();
-    }
-}, { passive: false });
 
 // --- BLOQUEAR DOUBLE TAP ZOOM
 let lastTouch = 0;

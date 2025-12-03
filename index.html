@@ -6,16 +6,14 @@
     <title>Catálogo de Produtos</title>
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css" />
-    
   </head>
   <body>
-
     <div id="overlaySidebar"></div>
     <!-- SIDEBAR LATERAL -->
     <div id="sidebar" class="sidebar">
       <button class="close-sidebar" aria-label="Fechar menu">✕</button>
       <h3>Categorias</h3>
-       <hr class="aba-lateral-divider">
+      <hr class="aba-lateral-divider" />
       <br />
       <ul>
         <li onclick="filtrarCategoria('areia')">Areia</li>
@@ -27,7 +25,7 @@
 
     <button id="toggleSidebar" class="toggle-btn">☰</button>
     <!---barra de pesquisa--->
-    
+
     <div class="search-box">
       <img
         src="https://icons.iconarchive.com/icons/icons8/windows-8/24/Very-Basic-Search-icon.png"
@@ -39,27 +37,61 @@
 
     <div id="grid" class="grid"></div>
 
-   <!-- MODAL -->
-<div id="modal" class="modal">
-  <div id="modalContent" class="modal-content">
+    <!-- MODAL -->
+    <div id="modal" class="modal">
+      <div id="modalContent" class="modal-content">
+        <!-- GALERIA -->
+        <div class="gallery">
+          <div class="gallery-track" id="galleryTrack"></div>
+          <div class="arrow left" id="arrowLeft">&#10094;</div>
+          <div class="arrow right" id="arrowRight">&#10095;</div>
+        </div>
 
-    <!-- GALERIA -->
-    <div class="gallery">
-      <div class="gallery-track" id="galleryTrack"></div>
-      <div class="arrow left" id="arrowLeft">&#10094;</div>
-      <div class="arrow right" id="arrowRight">&#10095;</div>
+        <!-- DETALHES -->
+        <div class="details" id="modalDetails"></div>
+      </div>
     </div>
 
-    <!-- DETALHES -->
-    <div class="details" id="modalDetails"></div>
-  </div>
-</div>
-
-    
-    <!--roda pé-->
-
     <!-- Divisória -->
-        <hr class="divider">
+    <hr class="divider" />
+    <!--roda pé-->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section contact-social">
+          <h4>Nos Acompanhe</h4>
+          <div class="icons">
+            <a href="#"
+              ><img
+                src="https://icons.iconarchive.com/icons/icons8/windows-8/32/Social-Networks-Instagram-icon.png"
+                width="32"
+                height="32"
+                alt="Instagram"
+            /></a>
+            <a href="#"
+              ><img
+                src="https://icons.iconarchive.com/icons/arturo-wibawa/akar/32/tiktok-icon.png"
+                width="32"
+                height="32"
+                alt="TikTok"
+            /></a>
+            <a href="#"
+              ><img
+                src="https://icons.iconarchive.com/icons/arturo-wibawa/akar/32/github-icon.png"
+                width="32"
+                height="32"
+                alt="GitHub"
+            /></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          Desenvolvido por <strong>teddy_wagner</strong> | © 2025 Todos os
+          direitos reservados
+        </p>
+      </div>
+    </footer>
 
     <!--sistema novo-->
   </body>
