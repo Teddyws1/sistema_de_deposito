@@ -498,6 +498,147 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-
-
 //sistema novo 
+document.addEventListener('DOMContentLoaded', function () {
+
+    const gallery = document.getElementById('galleryTrack');
+    if (!gallery) {
+        console.error('galleryTrack não encontrado');
+        return;
+    }
+
+    function getImages() {
+        return Array.from(gallery.querySelectorAll('img'));
+    }
+
+    let currentIndex = 0;
+    let startX = 0;
+
+    // ===== MODAL =====
+    const overlay = document.createElement('div');
+    overlay.id = 'img-original-overlay';
+
+    Object.assign(overlay.style, {
+        position: 'fixed',
+        inset: '0',
+        zIndex: '99999',
+        display: 'none',
+        alignItems: 'center',
+        justifyContent: 'center',
+        overflow: 'hidden',
+        opacity: '0',
+        transition: 'opacity 0.3s ease'
+    });
+
+    const modalImg = document.createElement('img');
+
+    Object.assign(modalImg.style, {
+        maxWidth: '95vw',
+        maxHeight: '95vh',
+        objectFit: 'contain',
+        transition: 'transform .3s ease, opacity .3s ease',
+        transform: 'scale(.85)',
+        opacity: '0'
+    });
+
+    overlay.appendChild(modalImg);
+    document.body.appendChild(overlay);
+
+    // ===== ABRIR (1 CLIQUE) =====
+    gallery.addEventListener('click', function (e) {
+        if (e.target.tagName !== 'IMG') return;
+
+        const images = getImages();
+        const index = images.indexOf(e.target);
+        openModal(index);
+    });
+
+    function openModal(index) {
+        const images = getImages();
+        if (!images[index]) return;
+
+        currentIndex = index;
+
+        modalImg.style.opacity = '0';
+        modalImg.style.transform = 'scale(.85)';
+        modalImg.src = images[currentIndex].src;
+
+        overlay.style.display = 'flex';
+
+        modalImg.onload = () => {
+            requestAnimationFrame(() => {
+                overlay.style.opacity = '1';
+                modalImg.style.opacity = '1';
+                modalImg.style.transform = 'scale(1)';
+            });
+        };
+    }
+
+    // ===== FECHAR =====
+    function closeModal() {
+        overlay.style.opacity = '0';
+        modalImg.style.opacity = '0';
+        modalImg.style.transform = 'scale(.85)';
+
+        setTimeout(() => {
+            overlay.style.display = 'none';
+        }, 300);
+    }
+
+    overlay.addEventListener('click', closeModal);
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModal();
+    });
+
+    // ===== TROCA POR SCROLL INVERTIDO =====
+    overlay.addEventListener('wheel', function (e) {
+        e.preventDefault();
+        if (e.deltaY > 0) prevImage();   // scroll para baixo = imagem anterior
+        else nextImage();                 // scroll para cima = próxima imagem
+    }, { passive: false });
+
+    // ===== SWIPE MOBILE =====
+    overlay.addEventListener('touchstart', function (e) {
+        startX = e.touches[0].clientX;
+    });
+
+    overlay.addEventListener('touchend', function (e) {
+        const endX = e.changedTouches[0].clientX;
+        const diff = startX - endX;
+
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) nextImage();
+            else prevImage();
+        }
+    });
+
+    // ===== PRÓXIMA (SEM LOOP) =====
+    function nextImage() {
+        const images = getImages();
+        if (currentIndex < images.length - 1) {
+            modalImg.classList.add('switching');
+
+            setTimeout(() => {
+                currentIndex++;
+                modalImg.src = images[currentIndex].src;
+                modalImg.onload = () => modalImg.classList.remove('switching');
+            }, 150);
+        }
+    }
+
+    // ===== ANTERIOR (SEM LOOP) =====
+    function prevImage() {
+        const images = getImages();
+        if (currentIndex > 0) {
+            modalImg.classList.add('switching');
+
+            setTimeout(() => {
+                currentIndex--;
+                modalImg.src = images[currentIndex].src;
+                modalImg.onload = () => modalImg.classList.remove('switching');
+            }, 150);
+        }
+    }
+
+});
