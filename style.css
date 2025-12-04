@@ -664,36 +664,33 @@ body {
     top: -99px;
 }
 
-/* 📱 MOBILE — telas pequenas */
+/* ---- RESPONSIVIDADE ---- */
+
+/* 📱 MOBILE */
 @media (max-width: 600px) {
     #banner {
-        height: 200px;   /* Banner menor */
+        height: 180px;
     }
-    
     .content {
-        margin-top: -99px;
+        margin-top: 190px;
     }
 }
 
-
-/* 📟 TABLET — telas médias */
+/* 📟 TABLET */
 @media (min-width: 601px) and (max-width: 1024px) {
     #banner {
         height: 220px;
     }
-
     .content {
         margin-top: 230px;
     }
 }
 
-
-/* 🖥️ MONITORES GRANDES */
+/* 🖥️ PC / TELAS GRANDES */
 @media (min-width: 1400px) {
     #banner {
-        height: 235px;
+        height: 300px;
     }
-
     .content {
         margin-top: 310px;
     }
