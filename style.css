@@ -641,7 +641,80 @@
     width: 100%;
     margin: 0;
     padding: 0;
+    
 }
+
+/* Remove qualquer margem que empurre o banner */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Banner 100% grudado no topo e nas laterais */
+#banner {
+ position: relative;
+    width: 35vw;
+    height: auto;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    top: -99px;
+}
+
+/* 📱 MOBILE — telas pequenas */
+@media (max-width: 600px) {
+    #banner {
+        height: 200px;   /* Banner menor */
+    }
+    
+    .content {
+        margin-top: -99px;
+    }
+}
+
+
+/* 📟 TABLET — telas médias */
+@media (min-width: 601px) and (max-width: 1024px) {
+    #banner {
+        height: 220px;
+    }
+
+    .content {
+        margin-top: 230px;
+    }
+}
+
+
+/* 🖥️ MONITORES GRANDES */
+@media (min-width: 1400px) {
+    #banner {
+        height: 235px;
+    }
+
+    .content {
+        margin-top: 310px;
+    }
+}
+
+
+/* Imagem que NUNCA deforma */
+#banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* NÃO estica */
+  object-position: center top;
+}
+
+/* Conteúdo abaixo */
+.content {
+  margin-top: 20px;
+  position: relative;
+  z-index: 10;
+}
+
 
 /* IMAGEM estilo banner (igual ao print) */
 .header-img {
@@ -651,6 +724,7 @@
     display: block;
     margin: 0 ;
     padding: 0;
+    
 }
 
 /* Barra de pesquisa sobre a imagem */
@@ -692,5 +766,5 @@
 
 /* Espaço entre a imagem e os cards */
 .grid {
-    margin-top: 20px; /* para não colar na barra */
+    margin-top: -32px; /* para não colar na barra */
 }

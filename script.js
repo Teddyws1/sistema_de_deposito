@@ -112,7 +112,7 @@ const produtos = [
     } ,
     {
         nome: "Piso Madeira Premium",
-        descricao: "Piso porcelanato com acabamento amadeirado de alta definição.",
+        descricao: "Pisos porcelanato com acabamento amadeirado de alta definição.",
         metragem: "20 x 1920 mm",
         referencia: "000876",
         local: "Categoria: Areia",
