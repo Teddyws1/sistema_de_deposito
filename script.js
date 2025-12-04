@@ -7,8 +7,7 @@ const produtos = [
         referencia: "000123",
         local: "Pátio",
         peso: "32kg",
-        fabricante: "Cerâmicas Brasil",
-        lote: "A45",
+        marca: "delta",
         imagens: ["https://picsum.photos/600/400?1", "https://picsum.photos/600/400?2"]
     },
     {
@@ -24,7 +23,8 @@ const produtos = [
             "https://i.postimg.cc/5y4fdpk4/Captura-de-Tela-(36).png",
             "https://i.postimg.cc/5y4fdpk4/Captura-de-Tela-(36).png"
         ]
-    },
+    }
+    ,
     {
         nome: "Piso Madeira Premium",
         descricao: "Piso porcelanato com acabamento amadeirado de alta definição.",
@@ -32,11 +32,101 @@ const produtos = [
         referencia: "000876",
         local: "Categoria: Areia",
         peso: "27 kg",
-        fabricante: "WoodFloor Professional Series",
+        marca: "delta",
         lote: "C32 - Seleção Premium",
         imagens: [
             "https://i.postimg.cc/RFk26DZT/Captura-de-Tela-(38).png",
             "https://picsum.photos/600/400?4"
+        ]
+    }
+     ,
+    {
+        nome: "Piso Madeira Premium",
+        descricao: "Piso porcelanato com acabamento amadeirado de alta definição.",
+        metragem: "20 x 1920 mm",
+        referencia: "000876",
+        local: "Categoria: Areia",
+        peso: "27 kg",
+        marca: "delta",
+        lote: "C32 - Seleção Premium",
+        imagens: [
+            "https://i.postimg.cc/RFk26DZT/Captura-de-Tela-(38).png",
+            "https://picsum.photos/600/400?4"
+        ]
+    } ,
+    {
+        nome: "Piso Madeira Premium",
+        descricao: "Piso porcelanato com acabamento amadeirado de alta definição.",
+        metragem: "20 x 1920 mm",
+        referencia: "000876",
+        local: "Categoria: Areia",
+        peso: "27 kg",
+        marca: "delta",
+        lote: "C32 - Seleção Premium",
+        imagens: [
+            "https://i.postimg.cc/RFk26DZT/Captura-de-Tela-(38).png",
+            "https://picsum.photos/600/400?4"
+        ]
+    } ,
+    {
+        nome: "Piso Madeira Premium",
+        descricao: "Piso porcelanato com acabamento amadeirado de alta definição.",
+        metragem: "20 x 1920 mm",
+        referencia: "000876",
+        local: "Categoria: Areia",
+        peso: "27 kg",
+        marca: "delta",
+        lote: "C32 - Seleção Premium",
+        imagens: [
+            "https://i.postimg.cc/RFk26DZT/Captura-de-Tela-(38).png",
+            "https://picsum.photos/600/400?4"
+        ]
+    } ,
+    {
+        nome: "Piso Madeira Premium",
+        descricao: "Piso porcelanato com acabamento amadeirado de alta definição.",
+        metragem: "20 x 1920 mm",
+        referencia: "000876",
+        local: "Categoria: Areia",
+        peso: "27 kg",
+        marca: "delta",
+        lote: "C32 - Seleção Premium",
+        imagens: [
+            "https://i.postimg.cc/RFk26DZT/Captura-de-Tela-(38).png",
+            "https://picsum.photos/600/400?4"
+        ]
+    } ,
+    {
+        nome: "Piso Madeira Premium",
+        descricao: "Piso porcelanato com acabamento amadeirado de alta definição.",
+        metragem: "20 x 1920 mm",
+        referencia: "000876",
+        local: "Categoria: Areia",
+        peso: "27 kg",
+        marca: "delta",
+        lote: "C32 - Seleção Premium",
+        imagens: [
+            "https://i.postimg.cc/RFk26DZT/Captura-de-Tela-(38).png",
+            "https://picsum.photos/600/400?4"
+        ]
+    } ,
+    {
+        nome: "Piso Madeira Premium",
+        descricao: "Piso porcelanato com acabamento amadeirado de alta definição.",
+        metragem: "20 x 1920 mm",
+        referencia: "000876",
+        local: "Categoria: Areia",
+        peso: "27 kg",
+        marca: "delta",
+        lote: "C32 - Seleção Premium",
+        imagens: [
+            "https://i.postimg.cc/RFk26DZT/Captura-de-Tela-(38).png",
+            "https://i.postimg.cc/g0vN1FwV/Captura-de-Tela-(36).png",
+            "https://i.postimg.cc/V6mD8GM4/Captura-de-Tela-(37).png",
+            "https://i.postimg.cc/1tsJQC6Y/Captura-de-Tela-(41).png",
+            "https://i.postimg.cc/JnMPL6JT/Captura-de-Tela-(42).png",
+            "https://i.postimg.cc/pTCkXfY0/Captura-de-Tela-(43).png",
+         
         ]
     }
 ];
@@ -173,7 +263,7 @@ function openModal(i) {
         <strong>Referência:</strong> ${produtoAtual.referencia}<br>
         <strong>Local:</strong> ${produtoAtual.local}<br>
         <strong>Peso:</strong> ${produtoAtual.peso}<br>
-        <strong>Fabricante:</strong> ${produtoAtual.fabricante}<br>
+        <strong>marca:</strong> ${produtoAtual.marca}<br>
         <strong>Lote:</strong> ${produtoAtual.lote}<br>
     `;
 
@@ -285,7 +375,7 @@ function openModal(i) {
         <strong>Referência:</strong> ${produtoAtual.referencia}<br>
         <strong>Local:</strong> ${produtoAtual.local}<br>
         <strong>Peso:</strong> ${produtoAtual.peso}<br>
-        <strong>Fabricante:</strong> ${produtoAtual.fabricante}<br>
+        <strong>marca:</strong> ${produtoAtual.marca}<br>
         <strong>Lote:</strong> ${produtoAtual.lote}<br>
     `;
 

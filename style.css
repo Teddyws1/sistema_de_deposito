@@ -633,3 +633,64 @@
      -webkit-user-select: none;
      user-select: none;
  }
+
+ /* sisteam de img de heard */
+ /* Container da imagem */
+.header-img-container {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* IMAGEM estilo banner (igual ao print) */
+.header-img {
+    width: 100%;
+    height: 170px;      /* Altura igual ao print */
+    object-fit: cover;  /* Mantém formato paisagem */
+    display: block;
+    margin: 0 ;
+    padding: 0;
+}
+
+/* Barra de pesquisa sobre a imagem */
+.search-box {
+    width: 60%;
+    max-width: 420px;
+    height: 45px;
+    background: #fff;
+    border-radius: 30px;
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    position: absolute;
+    left: 50%;
+    top: 28%;   /* Posição igual ao print */
+    transform: translate(-65%, -50%);
+    border: 1px solid #dcdcdc;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.18);
+    z-index: 10;
+}
+
+/* Ícone da pesquisa */
+.search-box img {
+    width: 22px;
+    height: 22px;
+    opacity: .8;
+}
+
+/* Campo de pesquisa */
+.search-box input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+}
+
+/* Espaço entre a imagem e os cards */
+.grid {
+    margin-top: 20px; /* para não colar na barra */
+}

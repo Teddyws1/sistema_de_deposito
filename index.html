@@ -3,11 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Catálogo de Produtos</title>
+    <title>acho!</title>
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css" />
     <link rel="manifest" href="/manifest.json" />
     <meta name="theme-color" content="#1a1a1a" />
+    <link
+      rel="shortcut icon"
+      href="imagens/favicon_logo_com_nome/favicon-32x32-sem-fundo.png"
+      type="image/x-icon"
+    />
+    <!-- Ícones e configuração iOS -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/icons/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="acho!" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
     <link
       rel="apple-touch-icon"
       sizes="120x120"
@@ -25,6 +42,8 @@
     />
   </head>
   <body>
+
+    
     <div id="overlaySidebar"></div>
     <!-- SIDEBAR LATERAL -->
     <div id="sidebar" class="sidebar">
@@ -42,17 +61,25 @@
 
     <button id="toggleSidebar" class="toggle-btn">☰</button>
     <!---barra de pesquisa--->
+<div class="header-img-container">
+  <img
+    src="https://i.postimg.cc/g0mgFzfM/Gemini-Generated-Image-dknso7dknso7dkns.png"
+    class="header-img"
+    alt="banner"
+  />
 
-    <div class="search-box">
-      <img
-        src="https://icons.iconarchive.com/icons/icons8/windows-8/24/Very-Basic-Search-icon.png"
-        alt="Buscar"
-        class="search-icon"
-      />
-      <input id="search" placeholder="Pesquisar produto..." />
-    </div>
+  <div class="search-box">
+    <img
+      src="https://icons.iconarchive.com/icons/icons8/windows-8/24/Very-Basic-Search-icon.png"
+      alt="Buscar"
+      class="search-icon"
+    />
+    <input id="search" placeholder="Pesquisar produto..." />
+  </div>
+</div>
 
-    <div id="grid" class="grid"></div>
+<div id="grid" class="grid"></div>
+
 
     <!-- MODAL -->
     <div id="modal" class="modal">
