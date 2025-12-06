@@ -325,6 +325,18 @@
      transition: 0.25s ease;
  }
 
+ /* Linha separadora aba ateral divider*/
+ .aba-lateral-divider {
+     border: none;
+     height: 2px;
+     background: linear-gradient(270deg, #ffffff, #0e4f75, #070566 ,#ffffff);
+     background-size: 200% 100%;
+     margin: 7px 0;
+     border-radius: 2px;
+     /* deixa as pontas levemente arredondadas */
+     animation: moveGradient 2s linear infinite, pulseGlow 2s ease-in-out infinite;
+ }
+
  .sidebar ul li {
      position: relative;
      padding-left: 40px;

@@ -9,4 +9,4 @@ Versão 0.3.0v – Modal responsivo, animação de abertura, navegação por scr
 
 
 
-controle de código: 0.1.1.9v
+controle de código: 0.1.2.0v
