@@ -13,6 +13,14 @@
       href="imagens/favicon_logo_com_nome/favicon-32x32-sem-fundo.png"
       type="image/x-icon"
     />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
     <!-- Ícones e configuração iOS -->
     <link
       rel="apple-touch-icon"
@@ -42,8 +50,6 @@
     />
   </head>
   <body>
-
-    
     <div id="overlaySidebar"></div>
     <!-- SIDEBAR LATERAL -->
     <div id="sidebar" class="sidebar">
@@ -61,25 +67,17 @@
 
     <button id="toggleSidebar" class="toggle-btn">☰</button>
     <!---barra de pesquisa--->
-<div class="header-img-container">
-<img
-  id="banner"
-  src="https://i.postimg.cc/85pnFBk9/Gemini-Generated-Image-wmd9q5wmd9q5wmd9.png"
-  alt="banner"
-/>
 
-  <div class="search-box">
-    <img
-      src="https://icons.iconarchive.com/icons/icons8/windows-8/24/Very-Basic-Search-icon.png"
-      alt="Buscar"
-      class="search-icon"
-    />
-    <input id="search" placeholder="Pesquisar produto..." />
-  </div>
-</div>
+    <header class="header">
+      <h1 class="titulo-site">Achou!</h1>
 
-<div id="grid" class="grid"></div>
+      <div class="search-box">
+        <ion-icon name="search-outline"></ion-icon>
+        <input id="search_acho" placeholder="Pesquisar produto..." />
+      </div>
+    </header>
 
+    <div id="grid" class="grid"></div>
 
     <!-- MODAL -->
     <div id="modal" class="modal">
@@ -95,15 +93,16 @@
         <div class="details" id="modalDetails"></div>
       </div>
     </div>
+    
+    <!-- Linha Glow -->
+<div class="line-glow"></div>
 
-    <!-- Divisória -->
-    <hr class="divider" />
     <!--roda pé-->
     <footer class="footer">
       <div class="footer-content">
         <div class="footer-section contact-social">
           <h4>Nos Acompanhe</h4>
-          <hr class="dividerh4" />
+  
           <div class="icons">
             <a
               href="https://www.instagram.com/teddy_machado007?igsh=MmtjdTF4ZGlqdjVl"
@@ -149,7 +148,7 @@
 
       <div class="footer-bottom">
         <p>
-          Desenvolvido por <strong>teddy_wagner</strong> | © 2025 Todos os
+          Desenvolvido por <strong>teddy wagner</strong> | © 2025 Todos os
           direitos reservados
         </p>
       </div>

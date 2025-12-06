@@ -236,7 +236,7 @@ document.querySelector('.close-sidebar')
 
 
 // ================== PESQUISA ==================
-document.getElementById("search").addEventListener("input", e => {
+document.getElementById("search_acho").addEventListener("input", e => {
     const termo = e.target.value.toLowerCase();
     renderCards(produtos.filter(p => p.nome.toLowerCase().includes(termo)));
 });
@@ -734,43 +734,3 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-
-/////////////////dfsgf
-function ajustarBanner() {
-    const banner = document.getElementById("banner");
-    const largura = window.innerWidth;
-
-    if (largura <= 600) {
-        // MOBILE
-        banner.style.width = "100vw";
-        banner.style.top = "-20px";
-        banner.style.height = "160px";
-    }
-
-    else if (largura > 600 && largura <= 1024) {
-        // TABLET
-        banner.style.width = "80vw";
-        banner.style.top = "-60px";
-        banner.style.height = "200px";
-    }
-
-    else if (largura > 1024 && largura <= 1600) {
-        // PC NORMAL
-        banner.style.width = "40vw";
-        banner.style.top = "-100px";
-        banner.style.height = "260px";
-    }
-
-    else {
-        // TELAS GRANDES / ULTRAWIDE
-        banner.style.width = "30vw";
-        banner.style.top = "-140px";
-        banner.style.height = "300px";
-    }
-}
-
-// Chama ao entrar na página
-ajustarBanner();
-
-// Chama quando redimensiona a tela
-window.addEventListener("resize", ajustarBanner);
